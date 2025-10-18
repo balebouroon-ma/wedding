@@ -107,26 +107,23 @@
     <source src="wedding.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- دکمهٔ موسیقی عمودی در گوشهٔ پایین-چپ -->
+  <!-- دکمهٔ موسیقی افقی در پایین-چپ -->
   <button onclick="toggleMusic()" style="
     position: fixed;
-    left: 10px;
-    bottom: 60px;
-    transform: rotate(-90deg);
-    transform-origin: left bottom;
-    padding: 6px 30px;
+    left: 20px;
+    bottom: 20px;
+    padding: 8px 20px;
     background: #c9a99a;
     color: white;
     border: none;
     border-radius: 25px;
     font-family: 'Vazirmatn', sans-serif;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     cursor: pointer;
     z-index: 1000;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    white-space: nowrap;
-  ">آهنگ ما رو گوش بده.</button>
+  ">بزن</button>
 
   <!-- ستاره‌ها -->
   <script>
@@ -146,13 +143,13 @@
       const btn = event.target;
       if (audio.paused) {
         audio.play().then(() => {
-          btn.textContent = 'توقف موسیقی';
+          btn.textContent = 'توقف';
         }).catch(e => {
-          alert('لطفاً روی دکمه کلیک کنید تا موسیقی پخش شود.');
+          alert('لطفاً روی دکمه کلیک کنید.');
         });
       } else {
         audio.pause();
-        btn.textContent = 'آهنگ ما رو گوش بده.';
+        btn.textContent = 'بزن';
       }
     }
   </script>
