@@ -64,7 +64,6 @@
     .heart { color: #ff8ec7; }
     .footer { margin-top: 30px; font-size: 1rem; color: #d0c0a0; }
 
-    /* دکمهٔ همراه ما باشید */
     .rsvp {
       display: inline-block;
       margin-top: 20px;
@@ -81,9 +80,33 @@
       background: rgba(255, 255, 255, 0.9);
       transform: scale(1.05);
     }
+
+    /* دکمهٔ موسیقی */
+    #musicBtn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #c9a99a;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
+
+  <!-- موسیقی (پنهان) -->
+  <audio id="bgMusic" loop>
+    <source src="wedding.mp3" type="audio/mpeg">
+  </audio>
+  <!-- دکمهٔ پخش -->
+  <button id="musicBtn" onclick="toggleMusic()">♪</button>
 
   <!-- ستاره‌ها -->
   <script>
@@ -96,6 +119,22 @@
       star.style.top = Math.random() * 100 + '%';
       star.style.opacity = Math.random() * 0.8 + 0.2;
       document.body.appendChild(star);
+    }
+
+    // تابع پخش/توقف موسیقی
+    function toggleMusic() {
+      const audio = document.getElementById('bgMusic');
+      const btn = document.getElementById('musicBtn');
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.textContent = '⏸';
+        }).catch(e => {
+          alert('لطفاً یک‌بار روی دکمه کلیک کنید تا موسیقی پخش شود.');
+        });
+      } else {
+        audio.pause();
+        btn.textContent = '♪';
+      }
     }
   </script>
 
@@ -110,7 +149,6 @@
       <p>📍 <strong>مکان:</strong> کرج، ابتدای جادهٔ محمدشهر، خیابان بسیج، نبش بسیج ۱، پلاک ۷</p>
     </div>
 
-    <!-- دکمه برای رفتن به صفحهٔ تشکر -->
     <a href="thank-you.html" class="rsvp">همراه ما باشید</a>
 
     <div class="footer">
