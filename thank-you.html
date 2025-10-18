@@ -223,8 +223,8 @@
       statusEl.textContent = "در حال ثبت...";
       statusEl.style.color = "#d0c0a0";
 
-      // 🔴 جای این لینک، Web App URL خودت از Google Apps Script رو بعداً بذار
-      const url = "https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec?name=" + encodeURIComponent(name) + "&message=" + encodeURIComponent(msg);
+      // ✅ لینک واقعی شما جایگذاری شد
+      const url = "https://script.google.com/macros/s/AKfycbzJnHLj_U9o_JQGVpat63LXek4TQfE14GZJiZohFxSSQ4yB6VdhEuxzF6iCriF_028lkQ/exec?name=" + encodeURIComponent(name) + "&message=" + encodeURIComponent(msg);
       
       try {
         await fetch(url, { method: "POST", mode: "no-cors" });
