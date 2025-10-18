@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>دعوت به جشن ما ❤️</title>
+  <title>دعوت به عروسی ما ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,6 +81,25 @@
       transform: scale(1.05);
     }
 
+    /* دکمهٔ لوکیشن */
+    .location-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 8px 20px;
+      background: rgba(50, 150, 200, 0.85);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+    }
+    .location-btn:hover {
+      background: rgba(40, 130, 180, 0.95);
+      transform: scale(1.03);
+    }
+
     /* دکمهٔ موسیقی */
     #musicBtn {
       position: fixed;
@@ -101,11 +120,10 @@
 </head>
 <body>
 
-  <!-- موسیقی (پنهان) -->
+  <!-- موسیقی -->
   <audio id="bgMusic" loop>
     <source src="wedding.mp3" type="audio/mpeg">
   </audio>
-  <!-- دکمهٔ پخش -->
   <button id="musicBtn" onclick="toggleMusic()">♪</button>
 
   <!-- ستاره‌ها -->
@@ -121,7 +139,6 @@
       document.body.appendChild(star);
     }
 
-    // تابع پخش/توقف موسیقی
     function toggleMusic() {
       const audio = document.getElementById('bgMusic');
       const btn = document.getElementById('musicBtn');
@@ -129,7 +146,7 @@
         audio.play().then(() => {
           btn.textContent = '⏸';
         }).catch(e => {
-          alert('لطفاً یک‌بار روی دکمه کلیک کنید تا موسیقی پخش شود.');
+          alert('لطفاً روی دکمه کلیک کنید تا موسیقی پخش شود.');
         });
       } else {
         audio.pause();
@@ -147,6 +164,11 @@
       <p>📅 <strong>تاریخ:</strong> چهارشنبه، ۳۰ مهر ۱۴۰۴</p>
       <p>⏰ <strong>ساعت:</strong> ۱۸:۰۰ الی ۰۰:۰۰</p>
       <p>📍 <strong>مکان:</strong> کرج، ابتدای جادهٔ محمدشهر، خیابان بسیج، نبش بسیج ۱، پلاک ۷</p>
+      
+      <!-- دکمهٔ لوکیشن با بالاد -->
+      <a href="https://balad.ir/location?latitude=35.770985&longitude=50.934452&zoom=16.5" 
+         target="_blank" 
+         class="location-btn">لوکیشن</a>
     </div>
 
     <a href="thank-you.html" class="rsvp">همراه ما باشید</a>
