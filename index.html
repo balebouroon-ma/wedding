@@ -102,32 +102,34 @@
 </head>
 <body>
 
-  <!-- فایل صوتی (مخفی) -->
+  <!-- فایل صوتی -->
   <audio id="bgMusic" loop>
     <source src="wedding.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- دکمهٔ موسیقی — واضح و با متن فارسی -->
+  <!-- دکمهٔ موسیقی عمودی -->
   <button onclick="toggleMusic()" style="
     position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 10px 18px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: center;
+    padding: 8px 40px;
     background: #c9a99a;
     color: white;
     border: none;
     border-radius: 30px;
     font-family: 'Vazirmatn', sans-serif;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    white-space: nowrap;
   ">آهنگ ما رو گوش بده.</button>
 
   <!-- ستاره‌ها -->
   <script>
-    // ایجاد ستاره‌ها
     for (let i = 0; i < 100; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
@@ -139,7 +141,6 @@
       document.body.appendChild(star);
     }
 
-    // تابع پخش/توقف موسیقی
     function toggleMusic() {
       const audio = document.getElementById('bgMusic');
       const btn = event.target;
@@ -171,7 +172,7 @@
          class="location-btn">لوکیشن</a>
     </div>
 
-    <a href="thank-you.html" class="rsvp">کلیک‌ کنید</a>
+    <a href="thank-you.html" class="rsvp">کلیک کنید</a>
 
     <div class="footer">
       با عشق، پوریا و مهگل 💕
