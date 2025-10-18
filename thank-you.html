@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ممنونیم ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #0b0b1a, #1a1a2e);
+      color: #f0f0f0;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 10;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin: 20px 0 25px;
+      color: #f8f0e0;
+      text-shadow: 0 0 10px rgba(248, 240, 224, 0.6);
+    }
+    .poem {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      font-size: 1.8rem;
+      line-height: 1.7;
+      margin: 25px 0;
+      color: #f0f0f0;
+      padding: 0 10px;
+    }
+    .couple-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(212, 192, 160, 0.5);
+      border: 3px solid #d4c0a0;
+    }
+    .memory-box {
+      background: rgba(20, 20, 40, 0.7);
+      border-radius: 18px;
+      padding: 25px;
+      margin: 25px auto;
+      max-width: 550px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 12px;
+      border: 1px solid #d4c0a0;
+      border-radius: 12px;
+      font-family: 'Vazirmatn', sans-serif;
+      font-size: 1.1rem;
+      resize: vertical;
+      direction: rtl;
+      background: rgba(10, 10, 20, 0.6);
+      color: #f0f0f0;
+    }
+    .btn {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: rgba(212, 192, 160, 0.8);
+      color: #1a1a2e;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Vazirmatn', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: scale(1.03);
+    }
+    .status {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      min-height: 24px;
+      color: #d0c0a0;
+    }
+    .status.success { color: #a0d8a0; font-weight: 600; }
+    .footer {
+      margin-top: 35px;
+      font-size: 1.3rem;
+      color: #d0c0a0;
+      font-weight: 600;
+    }
+    .heart { color: #ff8ec7; }
+  </style>
+</head>
+<body>
+
+  <!-- ستاره‌ها -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.width = Math.random() * 3 + 'px';
+      star.style.height = star.style.width;
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.opacity = Math.random() * 0.8 + 0.2;
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <div class="container">
+    <h1>ممنونیم که همراه ما هستید! <span class="heart">♥</span></h1>
+
+    <img src="couple.jpg" alt="پوریا و مهگل" class="couple-photo">
+
+    <div class="poem">
+      چو گل شوی، در جشن ما بیا<br>
+      که عشق ما، نیازمند دوست دانا<br>
+      هر که بیاید، جان ما می‌شود<br>
+      در این سفر، همراهی تو جانا
+    </div>
+
+    <div class="memory-box">
+      <p>لطفاً یک خاطره یا پیام تبریک برای ما بنویسید:</p>
+      <textarea id="memoryInput" placeholder="یک پیام بگذارید و ثبت خاطره را بزنید"></textarea>
+      <button class="btn" onclick="submitMemory()">ثبت خاطره</button>
+      <div class="status" id="status"></div>
+    </div>
+
+    <div class="footer">
+      منتظر حضور گرمتون هستیم 💕
+    </div>
+  </div>
+
+  <script>
+    async function submitMemory() {
+      const msg = document.getElementById('memoryInput').value.trim();
+      const statusEl = document.getElementById('status');
+      if (!msg) {
+        statusEl.textContent = "لطفاً یک پیام بنویسید.";
+        return;
+      }
+      statusEl.textContent = "در حال ثبت...";
+      
+      // 🔴 جای این لینک، Web App URL خودت از Google Apps Script رو بذار
+      const url = "https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec?message=" + encodeURIComponent(msg);
+      
+      try {
+        await fetch(url, { method: "POST", mode: "no-cors" });
+        statusEl.textContent = "خاطره‌تان با موفقیت ثبت شد! 🌹";
+        statusEl.className = "status success";
+        document.getElementById('memoryInput').value = "";
+      } catch (e) {
+        statusEl.textContent = "خطا! لطفاً دوباره امتحان کنید.";
+      }
+    }
+  </script>
+</body>
+</html>
