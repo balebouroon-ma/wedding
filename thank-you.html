@@ -108,7 +108,7 @@
     }
     .heart { color: #ff8ec7; }
 
-    /* دکمهٔ موسیقی */
+    /* دکمهٔ موسیقی — در گوشهٔ پایین چپ */
     #musicBtn {
       position: fixed;
       bottom: 20px;
@@ -128,10 +128,12 @@
 </head>
 <body>
 
-  <!-- موسیقی -->
+  <!-- موسیقی (فایل باید اسمش wedding.mp3 باشه) -->
   <audio id="bgMusic" loop>
     <source src="wedding.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- دکمهٔ پخش/توقف -->
   <button id="musicBtn" onclick="toggleMusic()">♪</button>
 
   <!-- ستاره‌ها -->
@@ -147,7 +149,7 @@
       document.body.appendChild(star);
     }
 
-    // تابع پخش/توقف موسیقی
+    // تابع پخش موسیقی
     function toggleMusic() {
       const audio = document.getElementById('bgMusic');
       const btn = document.getElementById('musicBtn');
@@ -155,7 +157,7 @@
         audio.play().then(() => {
           btn.textContent = '⏸';
         }).catch(e => {
-          alert('لطفاً یک‌بار روی دکمه کلیک کنید تا موسیقی پخش شود.');
+          alert('لطفاً روی دکمه کلیک کنید تا موسیقی پخش شود.');
         });
       } else {
         audio.pause();
@@ -197,10 +199,7 @@
         return;
       }
       statusEl.textContent = "در حال ثبت...";
-      
-      // 🔴 جای این لینک، Web App URL خودت از Google Apps Script رو بذار
       const url = "https://script.google.com/macros/s/YOUR_WEB_APP_URL/exec?message=" + encodeURIComponent(msg);
-      
       try {
         await fetch(url, { method: "POST", mode: "no-cors" });
         statusEl.textContent = "خاطره‌تان با موفقیت ثبت شد! 🌹";
