@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>دعوت به عروسی ما ❤️</title>
+  <title>دعوت به جشن ما ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -81,7 +81,6 @@
       transform: scale(1.05);
     }
 
-    /* دکمهٔ لوکیشن */
     .location-btn {
       display: inline-block;
       margin-top: 15px;
@@ -103,13 +102,13 @@
 </head>
 <body>
 
-  <!-- موسیقی -->
+  <!-- فایل صوتی (مخفی) -->
   <audio id="bgMusic" loop>
     <source src="wedding.mp3" type="audio/mpeg">
   </audio>
 
-  <!-- دکمهٔ موسیقی با متن جذاب -->
-  <button id="musicBtn" onclick="toggleMusic()" style="
+  <!-- دکمهٔ موسیقی — واضح و با متن فارسی -->
+  <button onclick="toggleMusic()" style="
     position: fixed;
     bottom: 20px;
     left: 20px;
@@ -128,6 +127,7 @@
 
   <!-- ستاره‌ها -->
   <script>
+    // ایجاد ستاره‌ها
     for (let i = 0; i < 100; i++) {
       const star = document.createElement('div');
       star.classList.add('star');
@@ -139,9 +139,10 @@
       document.body.appendChild(star);
     }
 
+    // تابع پخش/توقف موسیقی
     function toggleMusic() {
       const audio = document.getElementById('bgMusic');
-      const btn = document.getElementById('musicBtn');
+      const btn = event.target;
       if (audio.paused) {
         audio.play().then(() => {
           btn.textContent = 'توقف موسیقی';
@@ -165,13 +166,12 @@
       <p>⏰ <strong>ساعت:</strong> ۱۸:۰۰ الی ۰۰:۰۰</p>
       <p>📍 <strong>مکان:</strong> کرج، ابتدای جادهٔ محمدشهر، خیابان بسیج، نبش بسیج ۱، پلاک ۷</p>
       
-      <!-- دکمهٔ لوکیشن -->
       <a href="https://balad.ir/location?latitude=35.770985&longitude=50.934452&zoom=16.500000" 
          target="_blank" 
          class="location-btn">لوکیشن</a>
     </div>
 
-    <a href="thank-you.html" class="rsvp">همراه ما باشید</a>
+    <a href="thank-you.html" class="rsvp">کلیک‌ کنید</a>
 
     <div class="footer">
       با عشق، پوریا و مهگل 💕
