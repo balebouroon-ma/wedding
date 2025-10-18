@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دعوت به عروسی ما ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #0b0b1a, #1a1a2e);
+      color: #f0f0f0;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      position: relative;
+      z-index: 10;
+    }
+    h1 {
+      font-weight: 800;
+      font-size: 2.4rem;
+      margin: 20px 0;
+      color: #f8f0e0;
+      text-shadow: 0 0 10px rgba(248, 240, 224, 0.6);
+      line-height: 1.3;
+      letter-spacing: 1px;
+    }
+    .couple-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #d4c0a0;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(212, 192, 160, 0.5);
+    }
+    .info {
+      background: rgba(20, 20, 40, 0.7);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 25px 0;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .info p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin: 12px 0;
+    }
+    .heart { color: #ff8ec7; }
+    .footer { margin-top: 30px; font-size: 1rem; color: #d0c0a0; }
+    .rsvp {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: rgba(212, 192, 160, 0.8);
+      color: #1a1a2e;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ستاره‌ها -->
+  <script>
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.width = Math.random() * 3 + 'px';
+      star.style.height = star.style.width;
+      star.style.left = Math.random() * 100 + '%';
+      star.style.top = Math.random() * 100 + '%';
+      star.style.opacity = Math.random() * 0.8 + 0.2;
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <div class="container">
+    <h1>با کمال میل، شما را<br>به جشن بَله بُرون<br>دعوت می‌کنیم <span class="heart">♥</span></h1>
+    
+    <img src="couple.jpg" alt="پوریا و مهگل" class="couple-photo">
+
+    <div class="info">
+      <p>📅 <strong>تاریخ:</strong> چهارشنبه، ۳۰ مهر ۱۴۰۴</p>
+      <p>⏰ <strong>ساعت:</strong> ۱۸:۰۰ الی ۰۰:۰۰</p>
+      <p>📍 <strong>مکان:</strong> کرج، ابتدای جادهٔ محمدشهر، خیابان بسیج، نبش بسیج ۱، پلاک ۷</p>
+    </div>
+
+    <div class="footer">
+      با عشق، پوریا و مهگل 💕
+    </div>
+  </div>
+</body>
+</html>
